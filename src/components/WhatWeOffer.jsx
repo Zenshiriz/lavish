@@ -8,6 +8,7 @@ import dholkiImg from "../assets/about-dolki.jpg"
 import brithdayImg from "../assets/about-birthday-decor.jpg"
 import haldiImg from "../assets/about-haldi.jpg"
 import brideImg from "../assets/about-baby-shower.jpg"
+import Reveal from '../animations/Reveal'
 
 function WhatWeOffer() {
     const cardInfos = [
@@ -53,10 +54,15 @@ function WhatWeOffer() {
         },
     ]
   return (
-    <div className=' my-10'>
+      <div className=' my-10'>
+        <div className=' flex justify-center'>
+
+        <Reveal color={"#372825"} >
         <h2 class="block antialiased tracking-normal text-center my-10 font-sans text-4xl font-semibold leading-[1.3] text-inherit">
         What We Offer
       </h2>
+      </Reveal>
+        </div>
       <div className=' flex flex-wrap justify-center items-center gap-10'>
         {cardInfos.map(info =>(
        <WhatWeOfferCard key={info.id} title={info.title} img={info.img}/>

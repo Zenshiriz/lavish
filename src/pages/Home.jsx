@@ -6,12 +6,14 @@ import { PiMoneyWavy } from "react-icons/pi";
 import WEDecor from "../components/WEDecor";
 import CherishedGallery from "../components/CherishedGallery";
 import TestimonialSection from "../components/TestimonialSection";
+import Reveal from "../animations/Reveal";
 
 function Home() {
   return (
     <>
       <CarouselComponent />
-      <div className="bg-[#FBE8E4] py-10 px-10 flex flex-col md:flex-row md:justify-between gap-10">
+      <div className="bg-[#FBE8E4] py-10 px-10 flex flex-col items-center md:flex-row md:justify-between gap-10">
+        <Reveal color={"#372825"}>
         <div className="flex gap-x-6 justify-center">
           <RiCustomerService2Fill className=" text-3xl text-gray-900" />
           <div className="">
@@ -23,6 +25,8 @@ function Home() {
             </p>
           </div>
         </div>
+        </Reveal>
+        <Reveal color={"#372825"}>
         <div className="flex gap-x-6 justify-center">
           <PiMedalBold className=" text-3xl text-gray-900" />
           <div className="">
@@ -35,6 +39,8 @@ function Home() {
             </p>
           </div>
         </div>
+        </Reveal>
+        <Reveal color={"#372825"}>
         <div className="flex gap-x-6 justify-center">
           <PiMoneyWavy className=" text-3xl text-gray-900" />
           <div className="">
@@ -46,6 +52,7 @@ function Home() {
             </p>
           </div>
         </div>
+        </Reveal>
       </div>
       <WEDecor/>
       <CherishedGallery/>

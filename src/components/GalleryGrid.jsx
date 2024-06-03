@@ -48,14 +48,12 @@ function GalleryGrid() {
     },
   ];
 
-  const [active, setActive] = React.useState(
-    "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  );
+  const [active, setActive] = React.useState(gallery1);
   return (
     <div className="grid gap-4 justify-center">
       <div className=" flex justify-center items-center max-w-7xl mx-auto">
         <img
-          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:max-h-[600px]"
+          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:max-h-[600px] transition-all duration-300 ease-in-out"
           src={active}
           alt=""
         />
@@ -66,7 +64,7 @@ function GalleryGrid() {
             <img
               onClick={() => setActive(imgelink)}
               src={imgelink}
-              className="h-full w-full max-w-full cursor-pointer rounded-lg object-cover object-center max-h-[360px]"
+              className="h-full w-full max-w-full cursor-pointer rounded-lg object-cover object-center max-h-[360px] hover:opacity-60"
               alt="gallery-image"
             />
           </div>

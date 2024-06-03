@@ -7,7 +7,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-
+import Reveal from "../animations/Reveal";
 function TestimonialSection() {
   const userData = [
     {
@@ -48,24 +48,32 @@ change; the realist adjusts the sails."`,
   return (
     <div className="bg-[#FBE8E4] py-8 px-6 lg:mx-12 my-10">
       <div className="flex flex-col items-center px-4 py-8">
+        <Reveal>
         <h3 class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-inherit">
           Think about us
         </h3>
+        </Reveal>
+        <Reveal>
         <p class="block font-sans text-sm md:text-lg antialiased font-normal leading-relaxed text-inherit text-center">
           That’s the main thing people are controlled by! Thoughts - their
           perception of themselves!
         </p>
+        </Reveal>
       </div>
       <div className=" flex flex-wrap justify-center items-center gap-x-6  ">
         {userData.map((user) => (
           <Card className="mt-6 w-96" key={user.id}>
-            <CardBody className=" text-center">
+            <CardBody className="flex items-center flex-col text-center">
+            <Reveal>
               <Typography variant="h5" color="blue-gray" className="mb-4">
                 {user.userName}
               </Typography>
+              </Reveal>
+              <Reveal>
               <Typography>
               {user.review}
               </Typography>
+              </Reveal>
             </CardBody>
             <CardFooter className="pt-0  text-center">
               <div className="5 flex items-center justify-center gap-0 text-gray-900">

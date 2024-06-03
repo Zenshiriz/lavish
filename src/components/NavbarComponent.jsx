@@ -16,9 +16,9 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 
 function NavbarComponent() {
-  const pathName =  useLocation.pathname
+  const pathName = useLocation.pathname;
   const [openNav, setOpenNav] = React.useState(false);
-   console.log(pathName)
+  console.log(pathName);
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -34,7 +34,11 @@ function NavbarComponent() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/" className="flex items-center">
+        <Link
+          to="/"
+          className="flex items-center"
+          onClick={() => setOpenNav(false)}
+        >
           Home
         </Link>
       </Typography>
@@ -44,7 +48,11 @@ function NavbarComponent() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/about" className="flex items-center">
+        <Link
+          to="/about"
+          className="flex items-center"
+          onClick={() => setOpenNav(false)}
+        >
           About Us
         </Link>
       </Typography>
@@ -54,7 +62,11 @@ function NavbarComponent() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/contact" className="flex items-center">
+        <Link
+          to="/contact"
+          className="flex items-center"
+          onClick={() => setOpenNav(false)}
+        >
           Contact Us
         </Link>
       </Typography>
@@ -64,7 +76,11 @@ function NavbarComponent() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/gallery" className="flex items-center">
+        <Link
+          to="/gallery"
+          className="flex items-center"
+          onClick={() => setOpenNav(false)}
+        >
           Gallery
         </Link>
       </Typography>
@@ -80,30 +96,43 @@ function NavbarComponent() {
           <div className="mr-4 hidden lg:block">{navList}</div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-x-4">
-              <Button
-                type="text"
-                size="sm"
-                className="hidden lg:inline-block w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
+              <a
+                href="https://wa.me/919980887718?text=Hello How can I help you ?"
+                target="_blank"
               >
-                <span className="flex justify-center">
-                  <IoLogoWhatsapp className="text-[#372825] text-center text-xl" />
-                </span>
-              </Button>
-              <Button
-                type="text"
-                size="sm"
-                className="hidden lg:inline-block w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
+                {" "}
+                <Button
+                  type="text"
+                  size="sm"
+                  className="hidden lg:inline-block w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
+                >
+                  <span className="flex justify-center">
+                    <IoLogoWhatsapp className="text-[#372825] text-center text-xl" />
+                  </span>
+                </Button>
+              </a>
+              <a
+                href="https://www.instagram.com/lavish.mlr?igsh=NW92ZjZxaDRxZG15&utm_source=qr"
+                target="_blank"
               >
-                <span className="flex justify-center">
-                  <GrInstagram className="text-[#372825] text-center text-xl" />
-                </span>
-              </Button>
-              <Button
-                size="sm"
-                className="hidden lg:inline-block bg-[#372825] font-medium "
-              >
-                <span>book now</span>
-              </Button>
+                <Button
+                  type="text"
+                  size="sm"
+                  className="hidden lg:inline-block w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
+                >
+                  <span className="flex justify-center">
+                    <GrInstagram className="text-[#372825] text-center text-xl" />
+                  </span>
+                </Button>
+              </a>
+              <a href="tel:+919980887718">
+                <Button
+                  size="sm"
+                  className="hidden lg:inline-block bg-[#372825] font-medium "
+                >
+                  <span>book now</span>
+                </Button>
+              </a>
             </div>
             <IconButton
               variant="text"
@@ -164,6 +193,10 @@ function NavbarComponent() {
           {navList}
           <div className="flex items-center justify-between gap-x-4">
             <div className="flex gap-x-4 ml-2 mb-3">
+            <a
+                href="https://wa.me/919980887718?text=Hello How can I help you ?"
+                target="_blank"
+              >
               <Button
                 type="text"
                 size="sm"
@@ -173,19 +206,27 @@ function NavbarComponent() {
                   <IoLogoWhatsapp className="text-[#372825] text-center text-xl" />
                 </span>
               </Button>
-              <Button
-                type="text"
-                size="sm"
-                className=" w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
+              </a>
+              <a
+                href="https://www.instagram.com/lavish.mlr?igsh=NW92ZjZxaDRxZG15&utm_source=qr"
+                target="_blank"
               >
-                <span className="flex justify-center">
-                  <GrInstagram className="text-[#372825] text-center text-xl" />
-                </span>
-              </Button>
+                <Button
+                  type="text"
+                  size="sm"
+                  className=" w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
+                >
+                  <span className="flex justify-center">
+                    <GrInstagram className="text-[#372825] text-center text-xl" />
+                  </span>
+                </Button>
+              </a>
             </div>
-            <Button size="sm" className=" bg-[#372825] font-medium ">
-              <span>book now</span>
-            </Button>
+            <a href="tel:+919980887718">
+              <Button size="sm" className=" bg-[#372825] font-medium ">
+                <span>book now</span>
+              </Button>
+            </a>
           </div>
           <div className="flex flex-col gap-y-4 mt-2">
             <div className="flex items-center">

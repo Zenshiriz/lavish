@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import HeaderInfo from "../components/HeaderInfo";
 import headingContact from "../assets/header-contact.png";
-import { BiLogoFacebook } from "react-icons/bi";
 import { AiOutlineInstagram } from "react-icons/ai";
-import { CgTwitter } from "react-icons/cg";
 import { MdLocationOn, MdEmail, MdLocalPhone } from "react-icons/md";
 import contactImg from "../assets/contact-img.jpg";
 import { Typography } from "@material-tailwind/react";
 import { IoLogoWhatsapp } from "react-icons/io";
 import "react-toastify/dist/ReactToastify.css";
-
 import { ToastContainer, toast } from "react-toastify";
+import Reveal from "../animations/Reveal";
+
 
 function Contact() {
   const [copiedText, setCopiedText] = useState(null);
@@ -62,24 +61,33 @@ function Contact() {
           </div>
         </div>
         <div className=" px-10 md:w-[50%] md:pt-16">
+          <Reveal>
           <Typography className="font-Lexend uppercase text-gray-900 text-base max-w-[520px]">
             Looking for the best and most experienced décor professionals in
             mangalore? Get in touch with us without the slightest hesitation.
             Call us !
           </Typography>
+          </Reveal>
           <div className="my-8 lg:my-10 flex flex-col gap-4">
+            <Reveal>    
             <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
               <IoLogoWhatsapp />
               <span onClick={() => copyText(event.target.textContent)}>9844235429</span>
             </p>
+            </Reveal>
+            <Reveal>
             <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
               <MdLocalPhone />
               <span onClick={() => copyText(event.target.textContent)}>9844235429</span>
             </p>
+            </Reveal>
+            <Reveal>
             <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
               <MdEmail />
               <span onClick={() => copyText(event.target.textContent)}>lavishmangalore@gmail.com</span>
             </p>
+            </Reveal>
+            <Reveal>
             <p className=" flex items-center md:items-start gap-1 text-gray-900 font-Lexend md:text-base">
               <MdLocationOn />
               <div className="flex flex-col gap-y-2">
@@ -99,12 +107,15 @@ function Contact() {
                 </span>
               </div>
             </p>
+            </Reveal>
           </div>
           <div className="mb-8 ">
+            <Reveal>
             <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
               <AiOutlineInstagram />
               instagram
             </p>
+            </Reveal>
           </div>
         </div>
       </div>
