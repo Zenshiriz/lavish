@@ -7,7 +7,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-
+import servicesData from "../servicesData";
 function FooterComponent() {
   const LINKS = [
     {
@@ -66,51 +66,21 @@ function FooterComponent() {
               <Typography variant="lead" className="mb-3 font-bold uppercase">
                 Services
               </Typography>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Birthday Events
+              {servicesData.map(service =>(
+            <li key={service.id}>
+              <Link
+                to={service.link}
+              >
+                 <Typography className="py-1.5 font-thin text-sm transition-colors ">
+                {service.eventName}
                 </Typography>
-              </li>
+              </Link>
+            </li>
+          ))}
               <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Baby shower
-                </Typography>
+               
               </li>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Bridal / Groom Shower{" "}
-                </Typography>
-              </li>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Mehendi ceremony{" "}
-                </Typography>
-              </li>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Haldi ceremony{" "}
-                </Typography>
-              </li>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Arabic nights{" "}
-                </Typography>
-              </li>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Dolki decor{" "}
-                </Typography>
-              </li>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Wedding Stage Decorations{" "}
-                </Typography>
-              </li>
-              <li>
-                <Typography className="py-1.5 font-thin text-sm transition-colors ">
-                  Hall Decorations{" "}
-                </Typography>
-              </li>
+            
             </ul>
             <ul>
               <Typography variant="lead" className="mb-3 font-bold uppercase">

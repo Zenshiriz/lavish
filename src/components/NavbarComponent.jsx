@@ -14,7 +14,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-
+import servicesData from "../servicesData";
 function NavbarComponent() {
   const pathName = useLocation.pathname;
   const [openNav, setOpenNav] = React.useState(false);
@@ -63,39 +63,18 @@ function NavbarComponent() {
         className={`${openDropDown  ? "block md:absolute" : "hidden"}  bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44`}
       >
         <ul className="py-1" aria-labelledby="dropdownLargeButton">
-          <li>
-            <a
-              href="#"
-              className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-            >
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-            >
-              Settings
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-            >
-              Earnings
-            </a>
-          </li>
+          {servicesData.map(service =>(
+            <li key={service.id}>
+              <Link
+                to={service.link}
+                className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >
+                {service.eventName}
+              </Link>
+            </li>
+          ))}
         </ul>
-        <div className="py-1">
-          <a
-            href="#"
-            className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-          >
-            Sign out
-          </a>
-        </div>
+       
       </div>
     );
   };

@@ -12,6 +12,7 @@ export default [
   {
     id: 1,
     eventName: "Birthday",
+    link:"brithday",
     coverImg: decorDetailsBirthdayImg,
     description: `Every wedding is unique, let Lavish Event & Decor be a part of your
         fairytale. We are here to help bring your ideas and dreams to reality.
@@ -22,6 +23,8 @@ export default [
   {
     id: 2,
     eventName: "Baby Shower",
+    link:"baby-shower",
+
     coverImg: decorDetailsBabyShowerImg,
     description: `Every tiny arrival deserves a grand celebration. Lavish Event & Decor is here to transform your baby shower into a heartwarming and unforgettable experience.
         From whimsical themes to elegant settings, we handle all the details so you can focus on welcoming your precious one. Let Lavish Event & Decor create a baby shower that reflects the joy and love surrounding this special occasion.`,
@@ -29,6 +32,8 @@ export default [
   {
     id: 3,
     eventName: "Haldi Ceremony",
+    link:"haldi",
+
     coverImg: decorDetailsHaldiCeremonyImg,
     description: `Awaken the vibrant colors of celebration with a meticulously planned Haldi ceremony by Lavish Event & Decor. This auspicious pre-wedding ritual signifies blessings, purification, and joyous anticipation.
   
@@ -36,6 +41,8 @@ export default [
   },
   {
     id: 4,
+    link:"wedding",
+
     eventName: "wedding ceremony",
     coverImg: decorDetailsWeddingCeremonyImg,
     description: `Every love story deserves a breathtaking backdrop. Lavish Event & Decor transforms your wedding vision into a captivating reality, exceeding your wildest dreams.
@@ -45,6 +52,8 @@ export default [
   {
     id: 5,
     eventName: "Dholki Decor",
+    link:"dholki",
+
     coverImg: decorDetailsDholkiImg,
     description: `Embrace the vibrant energy of a Dholki celebration with electrifying décor by Lavish Event & Decor. This joyous pre-wedding event sets the stage for vibrant festivities and joyous anticipation.
   
@@ -53,6 +62,8 @@ export default [
   {
     id: 6,
     eventName: "Hall Decoration",
+    link:"hall-decoration",
+
     coverImg: decorDetailsHallDecorImg,
     description: `Your vision. Our expertise. Lavish Event & Decor elevates any hall into a captivating and unforgettable space. From grand ballrooms to intimate gatherings, we possess the artistry and skill to transform your venue into a reflection of your desires.
   
@@ -61,6 +72,8 @@ export default [
   {
     id: 7,
     eventName: "Bride/Groom Shower",
+    link:"bride-shower",
+
     coverImg: decorDetailsBrideDecorImg,
     description: `Celebrate the upcoming nuptials with a shower brimming with joy and personality, designed by Lavish Event & Decor! Whether it's a classic bridal shower or a modern co-ed celebration, we create a vibrant and festive atmosphere to honor the bride or groom.
   
@@ -68,6 +81,8 @@ export default [
   },
   {
     id: 8,
+    link:"arabic-nights",
+
     eventName: "Arabic Nights",
     coverImg: decorDetailsArabianNightsDecorImg,
     description: `Transport your guests to a world of shimmering silks and enchanting fables with an Arabian Nights-themed event designed by Lavish Event & Decor. We'll transform your chosen space into a captivating oasis, brimming with the mystique and opulence of the Orient.
@@ -78,6 +93,8 @@ export default [
   },
   {
     id: 9,
+    link:"mehendi-ceremony",
+
     eventName: "Mehendi ceremony",
     coverImg: decorDetailsMehendiDecorImg,
     description: `Celebrate the vibrant artistry of henna with a captivating Mehndi ceremony designed by Lavish Event & Decor. This joyous pre-wedding tradition signifies blessings, adornment, and the blossoming of love.
