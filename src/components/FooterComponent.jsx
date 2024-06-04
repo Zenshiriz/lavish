@@ -144,6 +144,10 @@ function FooterComponent() {
                 Get on social
               </Typography>
               <div className="flex items-center gap-x-4">
+              <a
+                href="https://wa.me/919980887718?text=Hello How can I help you ?"
+                target="_blank"
+              >
               <Button
                 type="text"
                 size="sm"
@@ -153,6 +157,11 @@ function FooterComponent() {
                   <IoLogoWhatsapp className=" text-center text-xl" />
                 </span>
               </Button>
+              </a>
+              <a
+                href="https://www.instagram.com/lavish.mlr?igsh=NW92ZjZxaDRxZG15&utm_source=qr"
+                target="_blank"
+              >   
               <Button
                 type="text"
                 size="sm"
@@ -162,6 +171,7 @@ function FooterComponent() {
                   <GrInstagram className=" text-center text-xl" />
                 </span>
               </Button>
+              </a>
             </div>
             </ul>
           </div>

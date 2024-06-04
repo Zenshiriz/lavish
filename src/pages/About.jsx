@@ -4,7 +4,7 @@ import HeaderInfo from "../components/HeaderInfo";
 import InfoCard from "../components/InfoCard";
 import logo from "../assets/logo.jpg";
 import WhatWeOffer from "../components/WhatWeOffer";
-import howItWorksImg from "../assets/how-it-works.jpg"
+import howItWorksImg from "../assets/how-it-works.jpg";
 import HeaderAbout from "../assets/header-about-us.png";
 import Reveal from "../animations/Reveal";
 
@@ -29,41 +29,50 @@ function About() {
       <div className="md:flex my-6 text-gray-900">
         <div className=" w-full px-6 md:w-[50%] lg:px-10">
           <Reveal>
-          <img src={howItWorksImg} alt="image" className=" w-full max-h-[400px] object-cover" />
+            <img
+              src={howItWorksImg}
+              alt="image"
+              className=" w-full max-h-[400px] object-cover"
+            />
           </Reveal>
         </div>
         <div className=" my-6 md:my-0 px-6">
           <Reveal>
-          <h2 class="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-inherit">
-            How It Works{" "}
-          </h2>
+            <h2 class="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-inherit">
+              How It Works{" "}
+            </h2>
           </Reveal>
           <Reveal>
-          <p class="block text-gray-700 font-sans text-sm md:text-lg antialiased font-normal leading-relaxed text-inherit ">
-            It’s simple. You have an event We have amazing packages
-          </p>
+            <p class="block text-gray-700 font-sans text-sm md:text-lg antialiased font-normal leading-relaxed text-inherit ">
+              It’s simple. You have an event We have amazing packages
+            </p>
           </Reveal>
           <div className="mt-10 flex flex-col gap-y-6">
             <Reveal>
-            <h4 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-inherit uppercase">
-              contact us
-            </h4>
+              <h4 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-inherit uppercase">
+                contact us
+              </h4>
             </Reveal>
             <Reveal>
-            <h4 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-inherit uppercase">
-              make the deal
-            </h4>
+              <h4 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-inherit uppercase">
+                make the deal
+              </h4>
             </Reveal>
             <Reveal>
-            <h4 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-inherit uppercase">
-              EXPERIENCE OUR PROFESSIONAL SERVICE
-            </h4>
+              <h4 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-inherit uppercase">
+                EXPERIENCE OUR PROFESSIONAL SERVICE
+              </h4>
             </Reveal>
           </div>
-        <Button size='sm' className='my-6 rounded-full text-sm bg-[#FBE8E4] text-[#372825] capitalize font-normal' >Book Now</Button>
+          <a href="tel:+919980887718">
+            <Button
+              size="sm"
+              className="my-6 rounded-full text-sm bg-[#FBE8E4] text-[#372825] capitalize font-normal"
+            >
+              Book Now
+            </Button>
+          </a>
         </div>
-
- 
       </div>
     </>
   );

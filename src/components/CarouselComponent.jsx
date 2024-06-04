@@ -41,12 +41,15 @@ function CarouselComponent() {
               </Reveal>
             </div>
             <div className="flex justify-center gap-2 mt-6 md:mt-16">
+            <a href="tel:+919980887718">
+
               <Button
                 size="sm"
                 className="bg-[#FBE8E4] text-[#372825] rounded-full px-4"
               >
                 plan your wedding
               </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -89,12 +92,14 @@ function CarouselComponent() {
               </Reveal>
             </div>
             <div className="flex justify-center gap-2 mt-6 md:mt-16">
+            <a href="tel:+919980887718">
               <Button
                 size="sm"
                 className="bg-[#FBE8E4] text-[#372825] rounded-full px-4"
               >
                 Decor your stage
               </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -137,12 +142,14 @@ function CarouselComponent() {
               </Reveal>
             </div>
             <div className="flex justify-center gap-2 mt-6 md:mt-16">
+            <a href="tel:+919980887718">
               <Button
                 size="sm"
                 className="bg-[#FBE8E4] text-[#372825] rounded-full px-4"
               >
                 book your dream wedding
               </Button>
+              </a>
             </div>
           </div>
         </div>

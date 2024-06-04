@@ -54,7 +54,7 @@ function WhatWeOffer() {
         },
     ]
   return (
-      <div className=' my-10 mx-2'>
+      <div className=' my-10 '>
         <div className=' flex justify-center'>
         <Reveal color={"#372825"} >
         <h2 class="block antialiased tracking-normal text-center my-10 font-sans text-4xl font-semibold leading-[1.3] text-inherit">

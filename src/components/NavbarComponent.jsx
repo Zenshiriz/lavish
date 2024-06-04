@@ -1,6 +1,6 @@
 import {
   Navbar,
-  MobileNav,
+  Collapse,
   Typography,
   Button,
   IconButton,
@@ -18,6 +18,11 @@ import { IoLocationSharp } from "react-icons/io5";
 function NavbarComponent() {
   const pathName = useLocation.pathname;
   const [openNav, setOpenNav] = React.useState(false);
+  const [openDropDown, setOpenDropDown] = React.useState(false);
+  const toggleDropdown = () => {
+    setOpenDropDown(!openDropDown)
+  };
+
   console.log(pathName);
   React.useEffect(() => {
     window.addEventListener(
@@ -25,6 +30,75 @@ function NavbarComponent() {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+
+  const DropdownButton = () => {
+    return (
+      <button
+        id="dropdownNavbarLink"
+        onClick={toggleDropdown}
+        data-dropdown-toggle="dropdownNavbar"
+        className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto"
+      >
+        Services
+        <svg
+          className="w-4 h-4 ml-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+    );
+  };
+
+  const DropdownMenu = () => {
+    return (
+      <div
+        id="dropdownNavbar"
+        className={`${openDropDown  ? "block md:absolute" : "hidden"}  bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44`}
+      >
+        <ul className="py-1" aria-labelledby="dropdownLargeButton">
+          <li>
+            <a
+              href="#"
+              className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+            >
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+            >
+              Settings
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+            >
+              Earnings
+            </a>
+          </li>
+        </ul>
+        <div className="py-1">
+          <a
+            href="#"
+            className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+          >
+            Sign out
+          </a>
+        </div>
+      </div>
+    );
+  };
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -84,6 +158,11 @@ function NavbarComponent() {
           Gallery
         </Link>
       </Typography>
+      <div >
+      <DropdownButton />
+      <DropdownMenu />
+      </div>
+
     </ul>
   );
   return (
@@ -93,7 +172,9 @@ function NavbarComponent() {
           <div>
             <img src={logo} className="w-12 h-12" alt="logo" />
           </div>
-          <div className="mr-4 hidden lg:block">{navList}</div>
+          <div className="mr-4 hidden lg:block">
+            {navList}
+          </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-x-4">
               <a
@@ -189,23 +270,23 @@ function NavbarComponent() {
             </span>
           </div>
         </div>
-        <MobileNav open={openNav}>
-          {navList}
+        <Collapse open={openNav}>
+         {openNav && navList}
           <div className="flex items-center justify-between gap-x-4">
             <div className="flex gap-x-4 ml-2 mb-3">
-            <a
+              <a
                 href="https://wa.me/919980887718?text=Hello How can I help you ?"
                 target="_blank"
               >
-              <Button
-                type="text"
-                size="sm"
-                className=" w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
-              >
-                <span className="flex justify-center">
-                  <IoLogoWhatsapp className="text-[#372825] text-center text-xl" />
-                </span>
-              </Button>
+                <Button
+                  type="text"
+                  size="sm"
+                  className=" w-10 h-10 rounded-full text-center px-0  bg-transparent outline outline-1 outline-[#372825]"
+                >
+                  <span className="flex justify-center">
+                    <IoLogoWhatsapp className="text-[#372825] text-center text-xl" />
+                  </span>
+                </Button>
               </a>
               <a
                 href="https://www.instagram.com/lavish.mlr?igsh=NW92ZjZxaDRxZG15&utm_source=qr"
@@ -244,7 +325,7 @@ function NavbarComponent() {
               </span>
             </div>
           </div>
-        </MobileNav>
+        </Collapse>
       </Navbar>
     </div>
   );
