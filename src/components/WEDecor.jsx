@@ -101,14 +101,6 @@ function WEDecor() {
     setSelectedEvent(selectedEvent);
   }
 
-  const [cardAnimation, setCardAnimation] = useState("hidden");
-
-  useEffect(() => {
-    setCardAnimation("visible"); // Trigger animation on initial render
-
-    // Animate on prop changes (selectedEvent)
-    return () => setCardAnimation("hidden"); // Cleanup animation on unmount
-  }, [selectedEvent]);
 
   return (
     <motion.div layout>
@@ -235,12 +227,6 @@ function WEDecor() {
       </div>
       <div className="p-6 flex justify-center items-center">
       <InfoCard
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1 },
-          }}
-          initial={"hidden"}
-          animate={"visible"}
           eventName={selectedEvent.eventName}
           img={selectedEvent.img}
           description={selectedEvent.description}
