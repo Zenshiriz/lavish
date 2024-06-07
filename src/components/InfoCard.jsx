@@ -4,7 +4,7 @@ import { Button } from "@material-tailwind/react";
 function InfoCard({ img, eventName, description , buttonVisible , link }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const [cardState, setCardState] = useState({ img, eventName, description });
+  const [cardState, setCardState] = useState({ img, eventName, description, link });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -59,12 +59,15 @@ function InfoCard({ img, eventName, description , buttonVisible , link }) {
         >
           {cardState.description}
         </motion.p>
-           {buttonVisible && <Button
+           {buttonVisible &&
+           <Link to={`/${cardState.link}`}>
+           <Button
               size="sm"
               className=" rounded-full text-sm bg-[#FBE8E4] text-[#372825] capitalize font-normal"
             >
             Book {eventName} Event
             </Button>
+           </Link>
 }
       </div>
     </div>
