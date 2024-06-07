@@ -9,7 +9,8 @@ import brithdayImg from "../assets/about-birthday-decor.jpg"
 import haldiImg from "../assets/about-haldi.jpg"
 import brideImg from "../assets/about-baby-shower.jpg"
 import Reveal from '../animations/Reveal'
-
+import servicesData from '../servicesData'
+import { Link } from 'react-router-dom'
 function WhatWeOffer() {
     const cardInfos = [
         {
@@ -63,8 +64,10 @@ function WhatWeOffer() {
       </Reveal>
         </div>
       <div className=' flex flex-wrap justify-center items-center gap-10 '>
-        {cardInfos.map(info =>(
-       <WhatWeOfferCard key={info.id} title={info.title} img={info.img}/>
+        {servicesData.map(info =>(
+          <Link  key={info.id}  to={info.link}>
+       <WhatWeOfferCard title={info.eventName} img={info.coverImg}/>
+          </Link>
         ))}
       </div>
     </div>

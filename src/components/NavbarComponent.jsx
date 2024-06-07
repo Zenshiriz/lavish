@@ -20,7 +20,7 @@ function NavbarComponent() {
   const [openNav, setOpenNav] = React.useState(false);
   const [openDropDown, setOpenDropDown] = React.useState(false);
   const toggleDropdown = () => {
-    setOpenDropDown(!openDropDown)
+    setOpenDropDown(!openDropDown);
   };
 
   console.log(pathName);
@@ -33,12 +33,19 @@ function NavbarComponent() {
 
   const DropdownButton = () => {
     return (
+      <Typography
+         as="li"
+         variant="small"
+         color="blue-gray"
+         className="p-1 font-normal"
+       >
       <button
         id="dropdownNavbarLink"
         onClick={toggleDropdown}
         data-dropdown-toggle="dropdownNavbar"
-        className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto"
+        className="  border-b border-gray-100 md:hover:bg-transparent md:border-0  pr-4  md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto"
       >
+
         Services
         <svg
           className="w-4 h-4 ml-1"
@@ -53,6 +60,7 @@ function NavbarComponent() {
           />
         </svg>
       </button>
+      </Typography>
     );
   };
 
@@ -60,11 +68,13 @@ function NavbarComponent() {
     return (
       <div
         id="dropdownNavbar"
-        className={`${openDropDown  ? "block md:absolute" : "hidden"}  bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44`}
+        className={`${
+          openDropDown ? "block md:absolute" : "hidden"
+        }  bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44`}
       >
         <ul className="py-1" aria-labelledby="dropdownLargeButton">
-          {servicesData.map(service =>(
-            <li key={service.id}>
+          {servicesData.map((service) => (
+            <li key={service.id} onClick={() =>{ setOpenNav(false) ,openDropDown(false)}}>
               <Link
                 to={service.link}
                 className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
@@ -74,7 +84,6 @@ function NavbarComponent() {
             </li>
           ))}
         </ul>
-       
       </div>
     );
   };
@@ -137,11 +146,10 @@ function NavbarComponent() {
           Gallery
         </Link>
       </Typography>
-      <div >
-      <DropdownButton />
-      <DropdownMenu />
+      <div>
+        <DropdownButton />
+        <DropdownMenu />
       </div>
-
     </ul>
   );
   return (
@@ -151,9 +159,7 @@ function NavbarComponent() {
           <div>
             <img src={logo} className="w-12 h-12" alt="logo" />
           </div>
-          <div className="mr-4 hidden lg:block">
-            {navList}
-          </div>
+          <div className="mr-4 hidden lg:block">{navList}</div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-x-4">
               <a
@@ -250,7 +256,7 @@ function NavbarComponent() {
           </div>
         </div>
         <Collapse open={openNav}>
-         {openNav && navList}
+          {openNav && navList}
           <div className="flex items-center justify-between gap-x-4">
             <div className="flex gap-x-4 ml-2 mb-3">
               <a

@@ -1,75 +1,35 @@
 import React from "react";
-import gallery1 from "../assets/gallery-1.jpg";
-import gallery2 from "../assets/gallery-2.jpg";
-import gallery3 from "../assets/gallery-3.jpg";
-import gallery4 from "../assets/gallery-4.jpg";
-import gallery5 from "../assets/gallery-5.jpg";
-import gallery6 from "../assets/gallery-6.jpg";
-import gallery7 from "../assets/gallery-7.jpg";
-import gallery8 from "../assets/gallery-8.jpg";
-import gallery9 from "../assets/gallery-9.jpg";
-import gallery10 from "../assets/gallery-10.jpg";
-import gallery11 from "../assets/gallery-11.jpg";
-import gallery12 from "../assets/gallery-12.jpg";
-function GalleryGrid() {
-  const data = [
-    {
-      imgelink: gallery1
-    },
-    {
-      imgelink: gallery2
-    },
-    {
-      imgelink:gallery3
-    },
-    {
-      imgelink: gallery4
-    },
-    {
-      imgelink: gallery5
-    },
-    {
-      imgelink: gallery6
-    },
-    {
-      imgelink: gallery7
-    },
-    {
-      imgelink: gallery8
-    },
-    {
-      imgelink: gallery9
-    },
-    {
-      imgelink: gallery11
-    },
-    {
-      imgelink: gallery12
-    },
-  ];
+import { motion,layout } from "framer-motion";
+function GalleryGrid({images}) {
+  
 
-  const [active, setActive] = React.useState(gallery1);
+  const [active, setActive] = React.useState(images[0]);
   return (
     <div className="grid gap-4 justify-center">
-      <div className=" flex justify-center items-center max-w-7xl mx-auto">
+      <div id="#img" className=" flex justify-center items-center max-w-7xl mx-auto" layout>
         <img
           className="h-auto w-full max-w-full rounded-lg object-cover object-center md:max-h-[600px] transition-all duration-300 ease-in-out"
           src={active}
           alt=""
         />
       </div>
-      <div className="grid grid-cols-5 gap-4">
-        {data.map(({ imgelink }, index) => (
+      <motion.div
+      inherit={{opacity:0}}
+      animate={{opacity:1}}
+      className="grid grid-cols-5 gap-4">
+        {images.map((image, index) => (
           <div key={index}>
+            <a href="#img">
             <img
-              onClick={() => setActive(imgelink)}
-              src={imgelink}
+              onClick={() => setActive(image)}
+              src={image}
               className="h-full w-full max-w-full cursor-pointer rounded-lg object-cover object-center max-h-[360px] hover:opacity-60"
               alt="gallery-image"
             />
+            </a>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

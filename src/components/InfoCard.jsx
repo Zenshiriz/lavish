@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-
-function InfoCard({ img, eventName, description }) {
+import { Button } from "@material-tailwind/react";
+function InfoCard({ img, eventName, description , buttonVisible , link }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [cardState, setCardState] = useState({ img, eventName, description });
@@ -22,8 +22,8 @@ function InfoCard({ img, eventName, description }) {
       <div className="relative h-full flex items-center justify-center lg:max-w-[500px] max-h-[330px] md:max-w-[300px] m-0 overflow-hidden text-gray-700 px-4 bg-white rounded-r-none bg-clip-border shrink-0">
         <motion.img
           variants={{
-            hidden: { opacity: 0, x: 75 },
-            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0,  },
+            visible: { opacity: 1,  },
           }}
           initial="hidden"
           animate={mainControls}
@@ -36,8 +36,8 @@ function InfoCard({ img, eventName, description }) {
       <div className="p-6 md:px-7">
         <motion.h4
           variants={{
-            hidden: { opacity: 0, x: 75 },
-            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0,  },
+            visible: { opacity: 1, },
           }}
           initial="hidden"
           animate={mainControls}
@@ -49,16 +49,23 @@ function InfoCard({ img, eventName, description }) {
         </motion.h4>
         <motion.p
           variants={{
-            hidden: { opacity: 0, x: 75 },
-            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0,  },
+            visible: { opacity: 1, },
           }}
           initial="hidden"
           animate={mainControls}
           transition={{ duration: 0.5, delay: 0.25 , ease:"easeInOut"}}
-          className="block mb-8  font-sans text-base antialiased font-normal leading-relaxed text-gray-700 transition duration-150 ease-in-out"
+          className="block mb-6  font-sans text-base antialiased font-normal leading-relaxed text-gray-700 transition duration-150 ease-in-out"
         >
           {cardState.description}
         </motion.p>
+           {buttonVisible && <Button
+              size="sm"
+              className=" rounded-full text-sm bg-[#FBE8E4] text-[#372825] capitalize font-normal"
+            >
+            Book {eventName} Event
+            </Button>
+}
       </div>
     </div>
   );

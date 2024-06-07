@@ -70,19 +70,19 @@ function Contact() {
           </Reveal>
           <div className="my-8 lg:my-10 flex flex-col gap-4">
             <Reveal>    
-            <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
+            <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base cursor-pointer">
               <IoLogoWhatsapp />
               <span onClick={() => copyText(event.target.textContent)}>9844235429</span>
             </p>
             </Reveal>
             <Reveal>
-            <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
+            <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base cursor-pointer">
               <MdLocalPhone />
               <span onClick={() => copyText(event.target.textContent)}>9844235429</span>
             </p>
             </Reveal>
             <Reveal>
-            <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
+            <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base cursor-pointer">
               <MdEmail />
               <span onClick={() => copyText(event.target.textContent)}>lavishmangalore@gmail.com</span>
             </p>
@@ -92,7 +92,7 @@ function Contact() {
               <MdLocationOn />
               <div className="flex flex-col gap-y-2">
                 <span className="text-sm">
-                  <span className="font-bold">Address 1:</span>{" "}
+                  <span className="font-bold cursor-pointer">Address 1:</span>{" "}
                   <span onClick={() => copyText(event.target.textContent)}>
                     yenepoya Mall, Mangalore 575002
                   </span>
@@ -111,10 +111,15 @@ function Contact() {
           </div>
           <div className="mb-8 ">
             <Reveal>
+            <a
+                href="https://www.instagram.com/lavish.mlr?igsh=NW92ZjZxaDRxZG15&utm_source=qr"
+                target="_blank"
+              >
             <p className=" flex items-center gap-1 text-gray-900 font-Lexend md:text-base">
               <AiOutlineInstagram />
               instagram
             </p>
+            </a>
             </Reveal>
           </div>
         </div>
