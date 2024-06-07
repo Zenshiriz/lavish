@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 function InfoCard({ img, eventName, description , buttonVisible , link }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
