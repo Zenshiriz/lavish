@@ -65,7 +65,7 @@ function WhatWeOffer() {
         </div>
       <div className=' flex flex-wrap justify-center items-center gap-10 '>
         {servicesData.map(info =>(
-          <Link  key={info.id}  to={info.link}>
+          <Link  key={info.id}  to={`/${info.link}`}>
        <WhatWeOfferCard title={info.eventName} img={info.coverImg}/>
           </Link>
         ))}
